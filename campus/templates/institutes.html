@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Institutes - CampusHire Intelligence</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>Institutes</h1>
+
+    {% for institute in institutes %}
+
+        <h2>{{ institute.name }}</h2>
+
+        <p>Type: {{ institute.institute_type }}</p>
+
+        <p>Location: {{ institute.location }}</p>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>

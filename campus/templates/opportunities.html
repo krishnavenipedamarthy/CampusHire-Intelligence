@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+     {% load static %}
+    <title>Opportunities - CampusHire Intelligence</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>Recruitment Opportunities</h1>
+
+    {% for opportunity in opportunities %}
+
+       <h2>
+    <a href="{% url 'recruitment_detail' opportunity.id %}">
+        {{ opportunity.recruitment.company.name }}
+    </a>
+</h2>
+
+        <h3>{{ opportunity.role.title }}</h3>
+
+        <p>
+            Institute:
+            {{ opportunity.recruitment.institute.name }}
+        </p>
+
+        <p>
+            Type:
+            {{ opportunity.recruitment.recruitment_type }}
+        </p>
+
+        <p>
+            Academic Year:
+            {{ opportunity.recruitment.academic_year }}
+        </p>
+
+        <p>
+            Minimum CGPA:
+            {{ opportunity.minimum_cgpa }}
+        </p>
+
+        <p>
+            Stipend / CTC:
+            {{ opportunity.stipend_or_ctc }}
+        </p>
+
+        <p>
+            Openings:
+            {{ opportunity.openings }}
+        </p>
+
+        <hr>
+
+    {% empty %}
+
+        <p>No recruitment opportunities available.</p>
+
+    {% endfor %}
+
+</body>
+</html>

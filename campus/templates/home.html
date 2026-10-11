@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusHire Intelligence</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1>CampusHire Intelligence</h1>
+
+       <nav>
+    <a href="#">Home</a>
+    <a href="{% url 'companies' %}">Companies</a>
+    <a href="{% url 'institutes' %}">Institutes</a>
+    <a href="{% url 'opportunities' %}">Opportunities</a>
+    <a href="{% url 'analytics' %}">Analytics</a>
+    <a href="{% url 'applications' %}">My Applications</a>
+</nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <h2>Find Your Next Opportunity</h2>
+
+        <p>
+            Explore internship and full-time recruitment opportunities
+            across IITs and NITs.
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="Search companies, roles or skills"
+            >
+
+            <button>Search</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Statistics Section -->
+    <section class="section">
+
+        <h2>CampusHire at a Glance</h2>
+<div class="stats">
+
+   <div class="stats">
+
+    <a href="{% url 'companies' %}" class="stat-card">
+        <h3>{{ company_count }}</h3>
+        <p>Companies</p>
+    </a>
+
+    <a href="{% url 'institutes' %}" class="stat-card">
+        <h3>{{ institute_count }}</h3>
+        <p>Institutes</p>
+    </a>
+
+    <a href="{% url 'opportunities' %}" class="stat-card">
+        <h3>{{ recruitment_count }}</h3>
+        <p>Recruitments</p>
+    </a>
+
+    <a href="{% url 'opportunities' %}" class="stat-card">
+        <h3>{{ role_count }}</h3>
+        <p>Roles</p>
+    </a>
+
+</div>
+    </section>
+
+
+    <!-- Popular Recruiters -->
+   <section class="section">
+    <h2>Popular Recruiters</h2>
+
+    <div class="cards">
+
+        {% for company in companies %}
+
+        <div class="card">
+            <h3>{{ company.name }}</h3>
+            <p>{{ company.industry }}</p>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+  
+
+    <!-- Explore Section -->
+    <section class="section">
+
+        <h2>Explore CampusHire</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Recruitment Opportunities</h3>
+                <p>
+                    Explore internship and full-time opportunities
+                    across IITs and NITs.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Companies</h3>
+                <p>
+                    Discover companies and the roles they recruit for.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Institutes</h3>
+                <p>
+                    Explore recruitment information from IITs and NITs.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Analytics</h3>
+                <p>
+                    Analyze recruitment trends, roles and frequently
+                    tested skills.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            CampusHire Intelligence © 2026
+        </p>
+
+        <p>
+            Recruitment Intelligence for IITs & NITs
+        </p>
+
+    </footer>
+
+</body>
+</html>

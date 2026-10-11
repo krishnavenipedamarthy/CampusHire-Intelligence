@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ {% load static %}
+    <title>My Applications - CampusHire Intelligence</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>My Applications</h1>
+
+    {% if student %}
+
+        <h2>{{ student.name }}</h2>
+
+        <p>
+            {{ student.branch.name }} |
+            Graduation Year: {{ student.graduation_year }} |
+            CGPA: {{ student.cgpa }}
+        </p>
+
+    {% endif %}
+
+    <hr>
+
+    {% for application in applications %}
+
+        <h2>
+            {{ application.recruitment_role.recruitment.company.name }}
+        </h2>
+
+        <h3>
+            {{ application.recruitment_role.role.title }}
+        </h3>
+
+        <p>
+            <strong>Current Status:</strong>
+            {{ application.current_status }}
+        </p>
+
+        <p>
+            <strong>Applied On:</strong>
+            {{ application.application_date }}
+        </p>
+
+        <h4>Application Timeline</h4>
+
+        {% for history in application.status_history.all %}
+
+            <p>
+                <strong>
+                    {{ history.selection_stage.stage_order }}.
+                    {{ history.selection_stage.stage_name }}
+                </strong>
+                — {{ history.status }}
+            </p>
+
+            {% if history.notes %}
+                <p>{{ history.notes }}</p>
+            {% endif %}
+
+        {% empty %}
+
+            <p>No status history available.</p>
+
+        {% endfor %}
+
+        <hr>
+
+    {% empty %}
+
+        <p>You have no applications yet.</p>
+
+    {% endfor %}
+
+</body>
+
+</html>

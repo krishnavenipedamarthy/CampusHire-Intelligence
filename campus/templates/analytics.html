@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{% load static %}
+    <title>Analytics - CampusHire Intelligence</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>Recruitment Analytics</h1>
+
+    <hr>
+
+    <h2>Platform Overview</h2>
+
+    <p>
+        Companies:
+        <strong>{{ company_count }}</strong>
+    </p>
+
+    <p>
+        Institutes:
+        <strong>{{ institute_count }}</strong>
+    </p>
+
+    <p>
+        Recruitment Opportunities:
+        <strong>{{ opportunity_count }}</strong>
+    </p>
+
+    <hr>
+
+    <h2>Recruitment Type</h2>
+
+    <p>
+        Internship Opportunities:
+        <strong>{{ internship_count }}</strong>
+    </p>
+
+    <p>
+        Full-time Opportunities:
+        <strong>{{ full_time_count }}</strong>
+    </p>
+
+    <hr>
+
+    <h2>Frequently Tested Skills</h2>
+
+    {% for item in popular_skills %}
+
+        <p>
+            <strong>{{ item.skill__name }}</strong>
+            — Tested in {{ item.count }} stage(s)
+        </p>
+
+    {% empty %}
+
+        <p>No skill data available.</p>
+
+    {% endfor %}
+
+    <hr>
+
+    <a href="{% url 'home' %}">
+        ← Back to Home
+    </a>
+
+</body>
+
+</html>

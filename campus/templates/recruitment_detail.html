@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ {% load static %}
+    <title>
+        {{ opportunity.recruitment.company.name }}
+        - Recruitment Details
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>
+        {{ opportunity.recruitment.company.name }}
+    </h1>
+
+    <h2>
+        {{ opportunity.role.title }}
+    </h2>
+
+    <hr>
+
+    <h3>Opportunity Information</h3>
+
+    <p>
+        <strong>Institute:</strong>
+        {{ opportunity.recruitment.institute.name }}
+    </p>
+
+    <p>
+        <strong>Recruitment Type:</strong>
+        {{ opportunity.recruitment.recruitment_type }}
+    </p>
+
+    <p>
+        <strong>Academic Year:</strong>
+        {{ opportunity.recruitment.academic_year }}
+    </p>
+
+    <p>
+        <strong>Minimum CGPA:</strong>
+        {{ opportunity.minimum_cgpa }}
+    </p>
+
+    <p>
+        <strong>Stipend / CTC:</strong>
+        {{ opportunity.stipend_or_ctc }}
+    </p>
+
+    <p>
+        <strong>Openings:</strong>
+        {{ opportunity.openings }}
+    </p>
+
+
+    <hr>
+
+
+    <h3>Eligibility</h3>
+
+    {% for item in eligibility %}
+
+        <p>
+            <strong>Branch:</strong>
+            {{ item.branch.name }}
+        </p>
+
+        <p>
+            <strong>Graduation Year:</strong>
+            {{ item.graduation_year }}
+        </p>
+
+    {% empty %}
+
+        <p>Eligibility information not available.</p>
+
+    {% endfor %}
+
+
+    <hr>
+
+
+    <h3>Selection Process</h3>
+
+    {% for stage in stages %}
+
+        <div>
+
+            <h4>
+                {{ stage.stage_order }}.
+                {{ stage.stage_name }}
+            </h4>
+
+            <p>
+                {{ stage.description }}
+            </p>
+
+            <h5>Skills Tested</h5>
+
+            {% for stage_skill in stage.skills %}
+
+                <p>
+                    {{ stage_skill.skill.name }}
+                    — {{ stage_skill.importance }}
+                </p>
+
+            {% empty %}
+
+                <p>No specific skills listed.</p>
+
+            {% endfor %}
+
+        </div>
+
+        <hr>
+
+    {% endfor %}
+
+
+    <a href="{% url 'opportunities' %}">
+        ← Back to Opportunities
+    </a>
+
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+/* ================================
+   GENERAL
+================================ */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px 8%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   HOME HERO
+================================ */
+
+.hero {
+    background-color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #6b7280;
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+.search-box {
+    margin-top: 30px;
+}
+
+.search-box input {
+    width: 450px;
+    max-width: 70%;
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 14px 25px;
+    margin-left: 8px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* ================================
+   HOME SECTIONS
+================================ */
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 30px;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   STATISTICS
+================================ */
+
+.stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+.stat-card h3 {
+    font-size: 36px;
+    margin: 0 0 10px;
+    color: #2563eb;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #6b7280;
+}
+
+
+/* ================================
+   HOME CARDS
+================================ */
+
+.cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #1e3a8a;
+}
+
+.card p {
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+
+/* ================================
+   PLAIN PAGES
+   Companies / Institutes /
+   Opportunities / Analytics /
+   Applications / Details
+================================ */
+
+body > h1 {
+    background-color: #1e3a8a;
+    color: white;
+    margin: 0;
+    padding: 30px 8%;
+    font-size: 34px;
+}
+
+body > h2,
+body > p,
+body > h3,
+body > h4,
+body > a,
+body > hr,
+body > div {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > h2 {
+    margin-top: 35px;
+    color: #1e3a8a;
+}
+
+body > h3 {
+    margin-top: 25px;
+    color: #2563eb;
+}
+
+body > h4 {
+    color: #374151;
+}
+
+body > p {
+    background-color: white;
+    padding: 15px 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+body > hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   LINKS
+================================ */
+
+body > a {
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body > a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   DETAIL / APPLICATION CONTENT
+================================ */
+
+body > h1 + h2 {
+    margin-top: 35px;
+}
+
+body > h5 {
+    max-width: 1000px;
+    margin: 20px auto 10px;
+    color: #374151;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .search-box input {
+        width: 80%;
+        max-width: none;
+    }
+
+    .search-box button {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .section {
+        padding: 35px 20px;
+    }
+
+    .stats,
+    .cards {
+        flex-direction: column;
+    }
+
+}
